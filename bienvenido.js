@@ -1,47 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const sectionTitle = document.getElementById("sectionTitle");
+  const mainContent = document.getElementById("mainContent");
   const userInfo = document.getElementById("userInfo");
-  const username = localStorage.getItem("usuarioGuardado") || "Invitado";
-  userInfo.innerText = `Sesión iniciada como: ${username}`;
 
-  const contenido = document.getElementById("contenido");
-  const titulo = document.getElementById("titulo");
+  const username = localStorage.getItem("usuarioGuardado") || "Invitado";
+  userInfo.innerText = `Bienvenido, ${username}`;
 
   const secciones = {
-    inicio: `<h2>¡Bienvenido a mi pagina!</h2>
-      <p>Explora la plataforma para descubrir herramientas útiles para desarrolladores y entusiastas de la programación.</p>`,
-
-    usuario: `<h2>👤 Perfil de Usuario</h2>
-      <p>Nombre de usuario: <strong>${username}</strong></p>
-      <p>Correo asociado: ${username.toLowerCase()}@correo.com (ficticio)</p>`,
-
-    lenguajes: `<h2>🧠 Lenguajes de Programación</h2>
-      <p><strong>JavaScript:</strong> Ideal para crear páginas web interactivas.</p>
-      <p><strong>Python:</strong> Ampliamente usado en ciencia de datos, automatización y desarrollo web.</p>
-      <p><strong>Java:</strong> Muy usado en apps móviles y sistemas empresariales.</p>
-      <p><strong>C++:</strong> Potente para sistemas operativos, videojuegos y software de alto rendimiento.</p>`
+    home: `
+      <h2>Panel Principal</h2>
+      <p>Explora tus herramientas de desarrollo en esta plataforma moderna.</p>
+    `,
+    profile: `
+      <h2>Perfil</h2>
+      <p><strong>Usuario:</strong> ${username}</p>
+      <p><strong>Email:</strong> ${username.toLowerCase()}@correo.com</p>
+    `,
+    languages: `
+      <h2>Lenguajes Dominados</h2>
+      <div class="language-grid">
+        <div class="language-card">
+          <h3>JavaScript</h3>
+          <p>Ideal para desarrollo web interactivo y frontend dinámico.</p>
+        </div>
+        <div class="language-card">
+          <h3>Python</h3>
+          <p>Potente en ciencia de datos, inteligencia artificial y automatización.</p>
+        </div>
+        <div class="language-card">
+          <h3>Java</h3>
+          <p>Ampliamente usado en aplicaciones móviles y sistemas empresariales.</p>
+        </div>
+        <div class="language-card">
+          <h3>C++</h3>
+          <p>Usado en motores de videojuegos, software de alto rendimiento y sistemas operativos.</p>
+        </div>
+      </div>
+    `
   };
 
-  function mostrarSeccion(id) {
-    contenido.innerHTML = secciones[id];
-    titulo.innerText = id.charAt(0).toUpperCase() + id.slice(1);
-  }
+  const menuItems = document.querySelectorAll(".menu li");
 
-  // Carga por defecto
-  mostrarSeccion("inicio");
-
-  // Botones del panel lateral
-  const botones = document.querySelectorAll(".sidebar li");
-  botones.forEach(btn => {
-    btn.addEventListener("click", () => {
-      if (btn.id === "logout") {
+  menuItems.forEach(item => {
+    item.addEventListener("click", () => {
+      if (item.id === "logout") {
         localStorage.removeItem("usuarioGuardado");
         window.location.href = "index.html";
         return;
       }
 
-      botones.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      mostrarSeccion(btn.dataset.content);
+      mainContent.classList.remove("slideIn");
+      void mainContent.offsetWidth; // Forzar reflow
+      const selected = item.dataset.content;
+      mainContent.innerHTML = secciones[selected];
+      sectionTitle.innerText = selected.charAt(0).toUpperCase() + selected.slice(1);
+      mainContent.classList.add("slideIn");
+
+      menuItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
     });
   });
+
+  // Mostrar sección inicial
+  mainContent.innerHTML = secciones.home;
 });

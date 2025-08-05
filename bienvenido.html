@@ -3,33 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bienvenido</title>
-  <link rel="stylesheet" href="bienvenido.css">
+  <title>Panel | DevZone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="bienvenido.css" />
 </head>
 <body>
-  <div class="dashboard">
-    <aside class="sidebar">
-      <h2>MENU</h2>
-      <ul>
-        <li class="active" data-content="inicio">Inicio</li>
-        <li data-content="usuario">Mi Perfil</li>
-        <li data-content="lenguajes">Lenguajes</li>
-        <li id="logout">Cerrar Sesión</li>
+  <div class="container">
+    <nav class="sidebar">
+      <div class="logo">
+        <i class="fas fa-terminal"></i>
+      </div>
+      <ul class="menu">
+        <li class="active" data-content="home"><i class="fas fa-home"></i></li>
+        <li data-content="profile"><i class="fas fa-user"></i></li>
+        <li data-content="languages"><i class="fas fa-code"></i></li>
+        <li id="logout"><i class="fas fa-sign-out-alt"></i></li>
       </ul>
-    </aside>
+    </nav>
 
-    <main class="main-content">
+    <main class="main">
       <header>
-        <h1 id="titulo">Dashboard</h1>
+        <h1 id="sectionTitle">Inicio</h1>
         <p id="userInfo"></p>
       </header>
-
-      <section id="contenido">
-        <!-- Aquí se cargará el contenido dinámico -->
-      </section>
+      <section id="mainContent" class="content"></section>
     </main>
   </div>
 
   <script src="bienvenido.js"></script>
 </body>
 </html>
+
