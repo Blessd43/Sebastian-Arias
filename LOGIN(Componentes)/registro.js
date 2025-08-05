@@ -9,8 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const correo = inputs[1].value.trim();
     const contraseña = inputs[2].value.trim();
 
+
     if (!usuario || !correo || !contraseña) {
       alert("⚠️ Por favor completa todos los campos.");
+      return;
+    }
+
+    // Validar que el correo contenga '@'
+    if (!correo.includes("@")) {
+      alert("⚠️ El correo debe contener el símbolo '@'.");
+      return;
+    }
+
+    // Validar que la contraseña tenga al menos 4 caracteres
+    if (contraseña.length < 4) {
+      alert("⚠️ La contraseña debe tener al menos 4 caracteres.");
       return;
     }
 
