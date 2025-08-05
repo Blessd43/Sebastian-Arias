@@ -1,0 +1,88 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("fondo1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 350px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  color: white;
+}
+
+h2 {
+  font-size: 24px;
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field input[type="email"] {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 30px;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.input-field button,
+.input-field input[type="submit"] {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 30px;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.input-field button:hover,
+.input-field input[type="submit"]:hover {
+  background: linear-gradient(135deg, #000000, #ff0000);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+a {
+  color: #ff6767;
+  text-decoration: underline;
+  font-size: 0.9em;
+  display: inline-block;
+  margin-top: 10px;
+}

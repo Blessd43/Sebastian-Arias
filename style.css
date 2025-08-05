@@ -1,0 +1,136 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+body{
+    background-image: url("fondo1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+.container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    background: rgba(255, 255,255, 0.1);
+    border-radius: 30px;
+    backdrop-filter: blur(1px);
+}
+span {
+    color: #ff6767;
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 15px 0;
+}
+header {
+    color: #ff0000;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 15px 0;
+    font-family: 'poppins', sans-serif;
+    font-weight: bold;
+}
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+.input-field .input{
+    height: 45px;
+    width: 87%;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    padding: 0 0 0 42px;
+    background: rgba(255,255,255,0.1);
+}
+i {
+    position: relative;
+    top: -31px;
+    left: 17px;
+    color: #fff;
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.submit {
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 45px;
+    outline: none;
+    width: 100%;
+    background-image: url("boton.png"); /* Asegúrate que el archivo esté en la misma carpeta que el HTML */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent; /* Para que el texto se vea */
+    cursor: pointer;
+    font-family: 'orbitron', sans-serif;
+    transition: .3s;
+}
+
+.submit:hover {
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    text-shadow: none;
+}
+.buttom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    color: #fff;
+    margin-top: 10px;
+}
+.left, .right {
+    display: flex;
+    align-items: center;
+}
+label a{
+    color: #ff6767;
+    text-decoration: none;
+}
+.recordarme {
+    color: #ff6767;
+}
+
+.crear-cuenta {
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  height: 45px;
+  outline: none;
+  width: 100%;
+  background-image: url("boton2.png"); /* Asegúrate que el archivo esté en la misma carpeta que el HTML */
+  color: transparent;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.crear-cuenta:hover {
+      box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: transparent;
+    border: 2px solid white;
+    text-shadow: none;
+
+}

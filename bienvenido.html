@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bienvenido</title>
+  <link rel="stylesheet" href="bienvenido.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>MENU</h2>
+      <ul>
+        <li class="active" data-content="inicio">Inicio</li>
+        <li data-content="usuario">Mi Perfil</li>
+        <li data-content="lenguajes">Lenguajes</li>
+        <li id="logout">Cerrar Sesión</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1 id="titulo">Dashboard</h1>
+        <p id="userInfo"></p>
+      </header>
+
+      <section id="contenido">
+        <!-- Aquí se cargará el contenido dinámico -->
+      </section>
+    </main>
+  </div>
+
+  <script src="bienvenido.js"></script>
+</body>
+</html>
