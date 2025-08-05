@@ -3,20 +3,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainContent = document.getElementById("mainContent");
   const userInfo = document.getElementById("userInfo");
 
-  const username = localStorage.getItem("usuarioGuardado") || "Invitado";
+
+  // Obtener datos del usuario registrado
+  let datosUsuario = null;
+  try {
+    datosUsuario = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+  } catch (e) {
+    datosUsuario = null;
+  }
+  const username = (datosUsuario && datosUsuario.usuario) ? datosUsuario.usuario : (localStorage.getItem("usuarioGuardado") || "Invitado");
+  const correo = (datosUsuario && datosUsuario.correo) ? datosUsuario.correo : "-";
   userInfo.innerText = `Bienvenido, ${username}`;
 
   const secciones = {
-    home: `
+    Inicio: `
       <h2>Panel Principal</h2>
       <p>Explora tus herramientas de desarrollo en esta plataforma moderna.</p>
     `,
-    profile: `
+    Perfil: `
       <h2>Perfil</h2>
       <p><strong>Usuario:</strong> ${username}</p>
-      <p><strong>Email:</strong> ${username.toLowerCase()}@correo.com</p>
+      <p><strong>Email:</strong> ${correo}</p>
     `,
-    languages: `
+    Lenguajes: `
       <h2>Lenguajes Dominados</h2>
       <div class="language-grid">
         <div class="language-card">
@@ -62,5 +71,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Mostrar sección inicial
-  mainContent.innerHTML = secciones.home;
+  mainContent.innerHTML = secciones.Inicio;
 });
