@@ -1,3 +1,26 @@
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 0;
+  }
+  .box {
+    min-height: 100vh;
+    padding: 10px;
+  }
+  .container {
+    width: 100%;
+    min-width: unset;
+    max-width: 98vw;
+    padding: 0 5px;
+    border-radius: 14px;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+}
 * {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;

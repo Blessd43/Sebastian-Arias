@@ -1,3 +1,44 @@
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 100vw;
+    flex-direction: row;
+    height: 60px;
+    min-width: unset;
+    max-width: unset;
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  .sidebar .logo {
+    display: none;
+  }
+  .menu {
+    flex-direction: row;
+    gap: 10px;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .menu li {
+    font-size: 18px;
+    padding: 8px;
+  }
+  #mainContent {
+    margin-top: 10px;
+    padding-bottom: 70px;
+    min-height: 60vh;
+  }
+}
 /* Reset */
 * {
   margin: 0;

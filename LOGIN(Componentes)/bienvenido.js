@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Ajustar tamaño de fuente en móviles
+  function ajustarFuenteResponsive() {
+    if (window.innerWidth <= 700) {
+      document.body.style.fontSize = '15px';
+    } else {
+      document.body.style.fontSize = '';
+    }
+  }
+  window.addEventListener('resize', ajustarFuenteResponsive);
+  ajustarFuenteResponsive();
   const sectionTitle = document.getElementById("sectionTitle");
   const mainContent = document.getElementById("mainContent");
   const userInfo = document.getElementById("userInfo");
@@ -52,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuItems.forEach(item => {
     item.addEventListener("click", () => {
-      if (item.id === "logout") {
+      if (item.id === "logout" || item.id === "Salir") {
         localStorage.removeItem("usuarioGuardado");
         window.location.href = "index.html";
         return;
