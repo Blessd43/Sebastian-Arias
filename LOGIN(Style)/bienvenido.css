@@ -199,3 +199,43 @@ header p {
   border-radius: 5px;
 }
 
+/* ...existing code... */
+
+/* --- RESPONSIVE DESIGN EXTRA --- */
+@media (max-width: 900px) {
+  .main {
+    padding: 20px;
+  }
+  header h1 {
+    font-size: 24px;
+  }
+  .content {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .language-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 18px;
+  }
+  .content {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .language-card {
+    padding: 10px;
+  }
+  .language-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* ...existing code... */
