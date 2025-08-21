@@ -25,16 +25,64 @@ document.addEventListener("DOMContentLoaded", () => {
   const correo = (datosUsuario && datosUsuario.correo) ? datosUsuario.correo : "-";
   userInfo.innerText = `Bienvenido, ${username}`;
 
-  // Juegos de ejemplo (imágenes siempre visibles)
+  // Videojuegos reales con descripción breve y atractiva y nuevas imágenes
   const juegos = [
-    { id: 1, nombre: "CyberStrike", precio: 29.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=CyberStrike" },
-    { id: 2, nombre: "Pixel Quest", precio: 19.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Pixel+Quest" },
-    { id: 3, nombre: "Racing Thunder", precio: 24.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Racing+Thunder" },
-    { id: 4, nombre: "Fantasy World", precio: 39.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Fantasy+World" },
-    { id: 5, nombre: "Space Odyssey", precio: 34.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Space+Odyssey" },
-    { id: 6, nombre: "Battle Arena", precio: 27.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Battle+Arena" },
-    { id: 7, nombre: "Retro Mania", precio: 14.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Retro+Mania" },
-    { id: 8, nombre: "Zombie Escape", precio: 22.99, img: "https://placehold.co/300x180/181818/ff3c3c?text=Zombie+Escape" }
+    {
+      id: 1,
+      nombre: "Minecraft",
+      precio: 26.95,
+      img: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/51/Minecraft_cover.png",
+      descripcion: "Construye, explora y sobrevive en el mundo de bloques más famoso. ¡Creatividad y diversión sin límites!"
+    },
+    {
+      id: 2,
+      nombre: "Grand Theft Auto V",
+      precio: 29.99,
+      img: "https://static.wikia.nocookie.net/gtawiki/images/7/76/GTA_V_Cover.jpg",
+      descripcion: "Vive la acción y la libertad en Los Santos. Tres historias, un mundo abierto y diversión garantizada."
+    },
+    {
+      id: 3,
+      nombre: "The Witcher 3: Wild Hunt",
+      precio: 19.99,
+      img: "https://static.wikia.nocookie.net/witcher/images/6/65/Witcher_3_cover_art.jpg",
+      descripcion: "Aventura épica, decisiones impactantes y un mundo lleno de misterios. Sé Geralt y vive la mejor fantasía RPG."
+    },
+    {
+      id: 4,
+      nombre: "FIFA 23",
+      precio: 39.99,
+      img: "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-23/common/fifa23-keyart-logo.jpg",
+      descripcion: "El fútbol más realista y emocionante. Compite, crea tu equipo y siente la pasión del deporte rey."
+    },
+    {
+      id: 5,
+      nombre: "Call of Duty: Modern Warfare II",
+      precio: 59.99,
+      img: "https://static.wikia.nocookie.net/callofduty/images/7/7a/MWII_Key_Art.png",
+      descripcion: "Acción intensa, gráficos de última generación y multijugador competitivo. ¡Vive la guerra moderna!"
+    },
+    {
+      id: 6,
+      nombre: "Fortnite",
+      precio: 0.00,
+      img: "https://static.wikia.nocookie.net/fortnite_gamepedia/images/0/09/Fortnite_%282017_video_game%29.jpg",
+      descripcion: "El battle royale más popular. Construye, compite y personaliza tu estilo en partidas llenas de acción."
+    },
+    {
+      id: 7,
+      nombre: "Red Dead Redemption 2",
+      precio: 49.99,
+      img: "https://static.wikia.nocookie.net/reddeadredemption/images/4/44/Red_Dead_Redemption_II.jpg",
+      descripcion: "Explora el salvaje oeste, vive una historia inolvidable y disfruta de paisajes impresionantes."
+    },
+    {
+      id: 8,
+      nombre: "League of Legends",
+      precio: 0.00,
+      img: "https://static.wikia.nocookie.net/leagueoflegends/images/6/6e/LoL_icon.png",
+      descripcion: "El MOBA más jugado. Elige tu campeón, compite en equipo y escala posiciones en partidas estratégicas."
+    }
   ];
 
   // Carrito en localStorage
@@ -74,6 +122,56 @@ document.addEventListener("DOMContentLoaded", () => {
     `
   };
 
+  // Modal para mostrar información del juego
+  function crearModalJuego(juego) {
+    // Elimina cualquier modal anterior
+    let modal = document.getElementById("modalJuego");
+    if (modal) modal.remove();
+
+    modal = document.createElement("div");
+    modal.id = "modalJuego";
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.width = "100vw";
+    modal.style.height = "100vh";
+    modal.style.background = "rgba(0,0,0,0.8)";
+    modal.style.display = "flex";
+    modal.style.alignItems = "center";
+    modal.style.justifyContent = "center";
+    modal.style.zIndex = "9999";
+
+    // Ajuste: modal más pequeño, scroll interno si el contenido es largo
+    modal.innerHTML = `
+      <div style="
+        background:#222;
+        padding:24px 18px 18px 18px;
+        border-radius:16px;
+        max-width:340px;
+        width:95vw;
+        max-height:90vh;
+        color:#fff;
+        position:relative;
+        box-shadow:0 0 30px #000;
+        overflow-y:auto;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+      ">
+        <button id="cerrarModalJuego" style="position:absolute;top:10px;right:15px;background:none;border:none;color:#ff3c3c;font-size:22px;cursor:pointer;">&times;</button>
+        <img src="${juego.img}" alt="${juego.nombre}" style="width:90%;max-width:180px;border-radius:10px;margin-bottom:15px;">
+        <h2 style="color:#ff5e5e;font-size:1.3em;text-align:center;">${juego.nombre}</h2>
+        <p style="margin-bottom:10px;font-size:0.98em;text-align:center;max-height:120px;overflow-y:auto;">
+          ${juego.descripcion.length > 320 ? juego.descripcion.slice(0, 320) + '...' : juego.descripcion}
+        </p>
+        <p style="margin-bottom:0.5em;"><b>Precio:</b> $${juego.precio}</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    document.getElementById("cerrarModalJuego").onclick = () => modal.remove();
+    modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+  }
+
   // Render catálogo
   function renderCatalogo() {
     const grid = document.getElementById("catalogoJuegos");
@@ -82,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = juegos.map(j => {
       const enCarrito = carrito.some(c => c.id === j.id);
       return `
-        <div class="language-card">
+        <div class="language-card" data-id="${j.id}" style="cursor:pointer;">
           <img src="${j.img}" alt="${j.nombre}" style="width:100%;border-radius:8px;margin-bottom:10px;">
           <h3>${j.nombre}</h3>
           <p>Precio: $${j.precio}</p>
@@ -92,8 +190,19 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
     }).join("");
+    // Evento para mostrar info al hacer clic en la tarjeta (excepto el botón)
+    grid.querySelectorAll(".language-card").forEach(card => {
+      card.onclick = (e) => {
+        if (e.target.classList.contains("btnAddCarrito")) return;
+        const id = Number(card.dataset.id);
+        const juego = juegos.find(j => j.id === id);
+        crearModalJuego(juego);
+      };
+    });
+    // Evento para agregar al carrito
     grid.querySelectorAll(".btnAddCarrito").forEach(btn => {
-      btn.onclick = () => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
         let carrito = getCarrito();
         const id = Number(btn.dataset.id);
         const juego = juegos.find(j => j.id === id);
