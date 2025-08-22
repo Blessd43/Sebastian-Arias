@@ -31,56 +31,56 @@ document.addEventListener("DOMContentLoaded", () => {
       id: 1,
       nombre: "Minecraft",
       precio: 26.95,
-      img: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/51/Minecraft_cover.png",
+      img: "https://www.mobygames.com/images/covers/l/363275-minecraft-playstation-4-edition-xbox-one-front-cover.png",
       descripcion: "Construye, explora y sobrevive en el mundo de bloques más famoso. ¡Creatividad y diversión sin límites!"
     },
     {
       id: 2,
       nombre: "Grand Theft Auto V",
       precio: 29.99,
-      img: "https://static.wikia.nocookie.net/gtawiki/images/7/76/GTA_V_Cover.jpg",
+      img: "https://tse3.mm.bing.net/th/id/OIP.XnY39z8vEhz3wBnEhST1IgHaJD?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       descripcion: "Vive la acción y la libertad en Los Santos. Tres historias, un mundo abierto y diversión garantizada."
     },
     {
       id: 3,
       nombre: "The Witcher 3: Wild Hunt",
       precio: 19.99,
-      img: "https://static.wikia.nocookie.net/witcher/images/6/65/Witcher_3_cover_art.jpg",
+      img: "https://tse2.mm.bing.net/th/id/OIP.7-BDYGbncGnVvbrHDTEB8QHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       descripcion: "Aventura épica, decisiones impactantes y un mundo lleno de misterios. Sé Geralt y vive la mejor fantasía RPG."
     },
     {
       id: 4,
       nombre: "FIFA 23",
       precio: 39.99,
-      img: "https://media.contentapi.ea.com/content/dam/ea/fifa/fifa-23/common/fifa23-keyart-logo.jpg",
+      img: "https://fifauteam.com/images/covers/fifa23/small/standard-cg.webp",
       descripcion: "El fútbol más realista y emocionante. Compite, crea tu equipo y siente la pasión del deporte rey."
     },
     {
       id: 5,
       nombre: "Call of Duty: Modern Warfare II",
       precio: 59.99,
-      img: "https://static.wikia.nocookie.net/callofduty/images/7/7a/MWII_Key_Art.png",
+      img: "https://pics.filmaffinity.com/call_of_duty_modern_warfare_ii-915289579-large.jpg",
       descripcion: "Acción intensa, gráficos de última generación y multijugador competitivo. ¡Vive la guerra moderna!"
     },
     {
       id: 6,
       nombre: "Fortnite",
       precio: 0.00,
-      img: "https://static.wikia.nocookie.net/fortnite_gamepedia/images/0/09/Fortnite_%282017_video_game%29.jpg",
+      img: "https://tse1.mm.bing.net/th/id/OIP.ofbhJULpKnSLiSFGjOz0OgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       descripcion: "El battle royale más popular. Construye, compite y personaliza tu estilo en partidas llenas de acción."
     },
     {
       id: 7,
       nombre: "Red Dead Redemption 2",
       precio: 49.99,
-      img: "https://static.wikia.nocookie.net/reddeadredemption/images/4/44/Red_Dead_Redemption_II.jpg",
+      img: "https://preview.redd.it/rdr2-art-covers-drawn-by-ai-v0-g14ogsd11kla1.jpg?width=960&format=pjpg&auto=webp&s=1fd5a37f613f930d5af236bdcd74dcd9b5e115e4",
       descripcion: "Explora el salvaje oeste, vive una historia inolvidable y disfruta de paisajes impresionantes."
     },
     {
       id: 8,
       nombre: "League of Legends",
       precio: 0.00,
-      img: "https://static.wikia.nocookie.net/leagueoflegends/images/6/6e/LoL_icon.png",
+      img: "https://tse3.mm.bing.net/th/id/OIP.LpYpUK1dV_YzIZgmADi7wQAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       descripcion: "El MOBA más jugado. Elige tu campeón, compite en equipo y escala posiciones en partidas estratégicas."
     }
   ];
@@ -98,13 +98,43 @@ document.addEventListener("DOMContentLoaded", () => {
     Blog: `
       <h2>Blog Gamer</h2>
       <div>
-        <h3 style="color:#ff5e5e;">¡Bienvenido a GamerZone!</h3>
-        <p>Descubre noticias, reseñas y novedades del mundo gamer. Explora nuestro catálogo y compra tus juegos favoritos.</p>
+        <h3 style="color:#ff5e5e;">¡Descubre nuestros juegos destacados!</h3>
         <ul>
-          <li><b>CyberStrike:</b> Nuevo DLC disponible.</li>
-          <li><b>Pixel Quest:</b> ¡Actualización de niveles!</li>
-          <li><b>Racing Thunder:</b> Torneo semanal abierto.</li>
+          <li><b>Minecraft:</b> Construye y explora mundos infinitos. ¡La creatividad no tiene límites!</li>
+          <li><b>GTA V:</b> Vive la acción y la aventura en Los Santos, con misiones y libertad total.</li>
+          <li><b>The Witcher 3:</b> Embárcate en una épica aventura llena de monstruos y misterios.</li>
+          <li><b>FIFA 23:</b> Siente la emoción del fútbol con gráficos y jugabilidad de última generación.</li>
+          <li><b>Red Dead Redemption 2:</b> Explora el salvaje oeste y vive una historia inolvidable.</li>
         </ul>
+        <h3 style="color:#ff5e5e;margin-top:25px;">Opiniones de nuestros usuarios</h3>
+        <div style="background:#232323;padding:15px 18px;border-radius:10px;margin-bottom:10px;display:flex;align-items:center;">
+          <img src="https://www.mobygames.com/images/covers/l/363275-minecraft-playstation-4-edition-xbox-one-front-cover.png" alt="Minecraft" style="width:36px;height:36px;border-radius:6px;margin-right:12px;">
+          <div>
+            <b>Juan P. sobre Minecraft:</b>
+            <p style="margin:0;">"¡Es el mejor juego para jugar con amigos y dejar volar la imaginación! 10/10."</p>
+          </div>
+        </div>
+        <div style="background:#232323;padding:15px 18px;border-radius:10px;margin-bottom:10px;display:flex;align-items:center;">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.7-BDYGbncGnVvbrHDTEB8QHaLH?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="The Witcher 3" style="width:36px;height:36px;border-radius:6px;margin-right:12px;">
+          <div>
+            <b>Laura G. sobre The Witcher 3:</b>
+            <p style="margin:0;">"La historia y los personajes son increíbles. Nunca me aburro de explorar su mundo."</p>
+          </div>
+        </div>
+        <div style="background:#232323;padding:15px 18px;border-radius:10px;margin-bottom:10px;display:flex;align-items:center;">
+          <img src="https://fifauteam.com/images/covers/fifa23/small/standard-cg.webp" alt="FIFA 23" style="width:36px;height:36px;border-radius:6px;margin-right:12px;">
+          <div>
+            <b>Carlos S. sobre FIFA 23:</b>
+            <p style="margin:0;">"El modo online es súper competitivo y los gráficos están geniales. ¡Muy recomendado!"</p>
+          </div>
+        </div>
+        <div style="background:#232323;padding:15px 18px;border-radius:10px;display:flex;align-items:center;">
+          <img src="https://preview.redd.it/rdr2-art-covers-drawn-by-ai-v0-g14ogsd11kla1.jpg?width=960&format=pjpg&auto=webp&s=1fd5a37f613f930d5af236bdcd74dcd9b5e115e4" alt="Red Dead Redemption 2" style="width:36px;height:36px;border-radius:6px;margin-right:12px;">
+          <div>
+            <b>Andrea M. sobre Red Dead Redemption 2:</b>
+            <p style="margin:0;">"La ambientación del oeste es espectacular. Es como estar en una película."</p>
+          </div>
+        </div>
       </div>
     `,
     Catalogo: `
@@ -117,8 +147,15 @@ document.addEventListener("DOMContentLoaded", () => {
     `,
     Perfil: `
       <h2>Perfil</h2>
-      <p><strong>Usuario:</strong> ${username}</p>
-      <p><strong>Email:</strong> ${correo}</p>
+      <div class="user-card">
+        <div class="user-avatar">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="user-info">
+          <p class="user-name"><strong>${username}</strong></p>
+          <p class="user-email"><i class="fas fa-envelope"></i> ${correo}</p>
+        </div>
+      </div>
     `
   };
 
